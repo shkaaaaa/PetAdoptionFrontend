@@ -1,0 +1,55 @@
+
+
+<div class="background">
+  <!-- <div class="overlay"></div> -->
+  <div class="container">
+    <div class="nav">
+      <div class="left-side heading" (click)="openMainCompo()" >Logo</div>
+      <div class="right-side" *ngIf="!isLoggedIn">
+        <div class="login">
+          <button class="btn" (click)="openLoginCompo()" >Login</button>
+        </div>
+        <div class="sign-up">
+          <button class="btn" (click)="openSignupCompo()"  >SignUp</button>
+        </div>
+
+      </div>
+      <div class="user-loggedIn" *ngIf="isLoggedIn">
+        <div class="profile">
+          <img src="" alt="">
+        </div>
+        <div class="username">
+          {{user.usernaame}}
+        </div>
+        <div class="logOut">
+          <button>Log Out</button>
+        </div>
+      </div>
+    </div>
+    <div class="main" *ngIf="mainOpen" >
+      <div class="slogan">
+        <h2>Animals life matter!</h2>
+      </div>
+    </div>
+    <div class="signup-container" *ngIf="signupOpen">
+        <div class="signup-card" style="height: 400px;">
+        <div class="heading">Sign-Up</div>
+        <input class="input-field"  type="text" placeholder="username" id="username" [(ngModel)]="username" ><br>
+        <input class="input-field" type="text" placeholder="name" id="name" [(ngModel)]="name"><br>
+        <input class="input-field" type="email" placeholder="email" id="email" [(ngModel)]="email"><br>
+        <input class="input-field" type="text" placeholder="phone" id="phone" [(ngModel)]="phone"><br>
+        <input class="input-field" type="password" placeholder="password" id="password" [(ngModel)]="password"><br>
+        <button class="btn" (click)=" signUp()">Submit</button>
+        </div>
+    </div>
+    <div class="login-container" *ngIf="loginOpen">
+        <div class="login-card" >
+        <div class="heading">Login</div>
+        <input class="input-field" type="text" id="username" placeholder="username" [(ngModel)]="loginUsername"><br>
+        <input class="input-field" type="password" id="password" placeholder="password" [(ngModel)]="loginPassword"><br>
+        <button class="btn" (click)="login()">Login</button>
+        </div>
+   </div>
+   
+  </div>
+</div>
