@@ -85,6 +85,7 @@ export class LandingPageComponent {
     this.clearDetails();
   }
 
+  //Sign Up method
   signUp() {
     if (this.signUpValidation()) {
       let user = { 'username': this.username, 'name': this.name, 'email': this.email, 'contact': this.phone, 'password': this.password };
